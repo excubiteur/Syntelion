@@ -126,7 +126,7 @@ A <=' B subset
 
 f:A->B function
 f:A+>B partial function
-f:A->>B injection    A >->> codomain(A)
+f:A->>B injection    A >->> codomain(f)
 f:A >-> B surjection   codomain(f) = B
 f:A >->> B bijection
 
