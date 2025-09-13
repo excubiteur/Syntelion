@@ -1,0 +1,16 @@
+module steelT;
+
+model;
+
+using standard.discrete
+
+PRODUCT: set;
+
+USD: unit;
+PRODUCT_UNIT: unit(PRODUCT);
+
+n: natural(>=1);
+PLANNING_HORIZON: discrete(n);
+T: indices(PLANNING_HORIZON);
+
+ProductCost: x:PRODUCT -> USD/PRODUCT_UNIT(x);

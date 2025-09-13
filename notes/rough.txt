@@ -1,0 +1,93 @@
+https://www.home.emcsg.com/about-the-market/rules/market-rules
+
+discrete indices ticks slots intervals left right all  length HOUR & MINUTE & SECOND
+
+left/begin right/end
+
+indices and slots are ordered sets
+
+https://chatgpt.com/share/68c3e33c-ba98-8010-8199-4d7440f8fe60
+
+BLAH = x -> if(pred(x)) P1 else( ) P3 else D;    BLA: A | B | C; BLA = F | G 
+
+s as <a, b, c>
+
+order vs sequence
+
+CITYT = A | B | C 
+
+https://chatgpt.com/share/68bb7ae4-2c1c-8010-8662-4f37347dcfef
+
+if(s){ A-> 15, B -> 7}.     if(x in B){true -> f(10), false -> 0}. [a, b, c, d]: consecutive(OrderedSet). forall, exists, sum, product, set.     keyword{}.    <item,  max_val> = max{.
+
+module A.B includes A
+
+include A implies A.*
+
+model query problem projection.          BlahVar: boolvar   KKVar: intval.   NNVat:floatvar.      BlahVar <-> AbSet & CcSet;        problem ....
+
+implementation   lookup(lazy, eager) procedure(MEMOIZED:bool).  id_type.   sql, host_method EAGER, LAZY, LAZY_AND_MEMOIZED, model(projection_params)
+
+[...] typed sequence. <> tuple,  { } structured compound expressions, () explict order of evaluation, siambiguation, function arguments 
+
+traverse(x:OrderedSet) {....    produces a sequence  fold???? fold(binaryop, init_value) {}
+
+enum { EAGER, LAZY, LAZY_MEMOIZED};
+    CarID addCard();
+    enum {  }
+    void setLoadCarsLazy(bool);
+    void LoadCars(Car)
+
+inline csharp and adonet    
+
+/DiscreteType/ //@ Agda name
+/FiniteType/
+/FiniteSet/
+/MaximalSet/
+/NullSet/
+`forall`, `sequences` prose and code comments
+forall{x: sequences(4, CITY) | forall{y: x} @  )
+[a, b, c, d]: CITY
+module Accounting
+model Blah
+include ParentBlah
+data OptionalName
+include Blah
+query BillPerMonth
+bindings
+x: Month
+results
+
+using standard.line;
+TIME_MODEL_DAY: discretized_finite(24);
+HOUR_SEGMENT : discretized_segment(TIME_MODEL_DAY);
+HOURS_INTERVAL : discretized_interval(TIME_MODEL_DAY);
+HOUR_POINT : discretized_point(TIME_MODEL_DAY);
+HOUR_SEGMENT_INDEX : segment_index(TIME_MODEL_DAY);
+POINT_SEGMENT_INDEX : segment_index(TIME_MODEL_DAY);
+CONSECUTIVE : 
+TIME_MODEL_HOUR: discretized_finite(60);
+MINUTE_SEGMENT : discretized_segment(TIME_MODEL_HOUR);
+MINUTE_INTERVAL : discretized_interval(TIME_MODEL_HOUR);
+MINUTE_POINT : discretized_point(TIME_MODEL_HOUR);
+MINUTE_SEGMENT_INDEX : segment_index(TIME_MODEL_HOUR);
+MINUTE_SEGMENT_INDEX : segment_index(TIME_MODEL_HOUR);
+MINUTE_SEGMENTS_OF_DAY alias HOUR_SEGMENT & MINUTE_SEGMENT  
+using standard.sequence;
+IS_BEFORE : A -> A - > bool;
+cyclic
+sequence
+subsequence
+using standard.arithmetic;
+decimal : implements(real);
+aaa: implements(natural1);
+naturall0
+integer
+A <= B // precicatr 
+subset(B) // all sunbsets of b
+powerset(A) power set of A
+A: subset(B); //
+
+https://chatgpt.com/share/68affa55-cf34-8010-b177-593f3a4250cb
+
+https://chatgpt.com/share/68affa25-1f1c-8010-ba5e-21a1c4966bea

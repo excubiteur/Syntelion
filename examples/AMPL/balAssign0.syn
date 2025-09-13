@@ -1,0 +1,9 @@
+module balAssign0;
+
+model;
+
+ALL_PEOPLE: ordered;
+CATEGORY: set;
+TYPE: set;
+
+PEOPLE = {i: ALL_PEOPLE | ordinal(i) % sample = selection};
