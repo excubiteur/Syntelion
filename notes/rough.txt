@@ -91,3 +91,43 @@ A: subset(B); //
 https://chatgpt.com/share/68affa55-cf34-8010-b177-593f3a4250cb
 
 https://chatgpt.com/share/68affa25-1f1c-8010-ba5e-21a1c4966bea
+
+boolexpr ? val_if_true, val_if_alse
+x <= 5  ?  4 ,
+x <=10  ? 17 ,
+x <= 19 ?  5 ,
+           3 ;
+
+partitions
+S = P1 | P2 | P3 | P4 | P5; 
+x: S;
+f: P4 -> integer;
+g: S -> integer;
+
+x ? P1 | P2 -> 7 ,
+    P3 -> 8 ,
+    y: P4 -> f(y) ,
+    P5 -> g(x), 
+    10 ;
+
+forall, exists, unique
+
+x: nullable(integer);
+x ? value y -> y , 15;
+
+f:S -> nullable(integer);
+x: { x:S: valued(f(x)) };
+
+f1:S +> integer;
+x: domain(f1);
+
+A <' B strict subset
+A <=' B subset
+
+f:A->B function
+f:A+>B partial function
+f:A->>B injection    A >->> codomain(A)
+f:A >-> B surjection   codomain(f) = B
+f:A >->> B bijection
+
+not, and, or
