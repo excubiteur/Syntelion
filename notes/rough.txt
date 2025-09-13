@@ -114,10 +114,10 @@ x: { x:S: valued(f(x)) };
 f1:S +> integer;
 x: domain(f1);
 
-f:A->B; // function, alternative notation '1,many--0,1' // All A's have a B, some B's have no A, some B's have the same A
-f:A+>B; partial function, alternative notation  '0,many--0,1' // Some A's have a B, some B's have no A, some B's have the same A
-f:A->>B; // injection  A >->> codomain(f), alternative notation // All A's have a B, some B's have no A, no two B's have the same A
-f:A >-> B; // surjection   codomain(f) = B, alternative notation  // All A's have a B, all B's have an A, some B's have the same A
+f:A->B; // function, alternative notation '1,n--0,1' // All A's have a B, some B's have no A, some B's have the same A
+f:A+>B; partial function, alternative notation  '0,n--0,1' // Some A's have a B, some B's have no A, some B's have the same A
+f:A->>B; // injection  A >->> codomain(f), alternative notation '1--0,1 '// All A's have a B, some B's have no A, no two B's have the same A
+f:A >-> B; // surjection   codomain(f) = B, alternative notation  '1,n--1' // All A's have a B, all B's have an A, some B's have the same A
 f:A >->> B; // bijection, alternative notation '1--1'   
 
 not, and, or
