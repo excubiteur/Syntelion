@@ -126,6 +126,17 @@ A & B // cartesion
 A | B // disjoint union / sum type
 A <' B // strict subset
 A <=' B // subset
+A n' B // intersection
+A u' B // union
+x in A // set membership
+
+union{x: ....}
+intersection{... }
+sum{... }
+forall{...}
+exists{...}
+unique{...}
+
 powerset(A) 
 
 A: set; // FiniteType, MaximalSet
@@ -157,3 +168,11 @@ SpecialLunch: intervals(DAY);
 length(LunchHour) = 1;
 length(SpecialLunch) = 2;
 [h1, h2]: SpecialLunch;
+
+model;
+
+data; // tests, examples
+
+query; // transaction script
+
+problem; // model for external optimizer, algorithm
