@@ -8,8 +8,6 @@ indices and slots are ordered sets
 
 https://chatgpt.com/share/68c3e33c-ba98-8010-8199-4d7440f8fe60
 
-BLAH = x -> if(pred(x)) P1 else( ) P3 else D;    BLA: A | B | C; BLA = F | G 
-
 s as <a, b, c>
 
 order vs sequence
@@ -17,8 +15,6 @@ order vs sequence
 CITYT = A | B | C 
 
 https://chatgpt.com/share/68bb7ae4-2c1c-8010-8662-4f37347dcfef
-
-if(s){ A-> 15, B -> 7}.     if(x in B){true -> f(10), false -> 0}. [a, b, c, d]: consecutive(OrderedSet). forall, exists, sum, product, set.     keyword{}.    <item,  max_val> = max{.
 
 module A.B includes A
 
@@ -40,11 +36,11 @@ enum { EAGER, LAZY, LAZY_MEMOIZED};
 
 inline csharp and adonet    
 
-/DiscreteType/ //@ Agda name
 /FiniteType/
 /FiniteSet/
 /MaximalSet/
 /NullSet/
+
 `forall`, `sequences` prose and code comments
 forall{x: sequences(4, CITY) | forall{y: x} @  )
 [a, b, c, d]: CITY
@@ -83,10 +79,7 @@ decimal : implements(real);
 aaa: implements(natural1);
 naturall0
 integer
-A <= B // precicatr 
-subset(B) // all sunbsets of b
-powerset(A) power set of A
-A: subset(B); //
+
 
 https://chatgpt.com/share/68affa55-cf34-8010-b177-593f3a4250cb
 
@@ -121,13 +114,46 @@ x: { x:S: valued(f(x)) };
 f1:S +> integer;
 x: domain(f1);
 
-A <' B strict subset
-A <=' B subset
-
-f:A->B function
-f:A+>B partial function
-f:A->>B injection    A >->> codomain(f)
-f:A >-> B surjection   codomain(f) = B
-f:A >->> B bijection
+f:A->B; // function, alternative notation '1,many--0,1' // All A's have a B, some B's have no A, some B's have the same A
+f:A+>B; partial function, alternative notation  '0,many--0,1' // Some A's have a B, some B's have no A, some B's have the same A
+f:A->>B; // injection  A >->> codomain(f), alternative notation // All A's have a B, some B's have no A, no two B's have the same A
+f:A >-> B; // surjection   codomain(f) = B, alternative notation  // All A's have a B, all B's have an A, some B's have the same A
+f:A >->> B; // bijection, alternative notation '1--1'   
 
 not, and, or
+
+A & B // cartesion
+A | B // disjoint union / sum type
+A <' B // strict subset
+A <=' B // subset
+powerset(A) 
+
+A: set; // FiniteType, MaximalSet
+X: ordered; // FiniteType, MaximalSet
+
+B: powerset(A); // FiniteSet
+
+C: order(A);
+
+forall{[from, to]: X |  }
+forall{[from, _, to]: C |  }
+
+forall{s: sequences(n, C) | forall{ m:? :...s@m...  } // to do
+
+DAY: discrete(24);
+HOUR: indices(DAY);
+
+LunchHour: HOUR;
+
+Lunch: slots(DAY);
+Lunch = slot(LunchHour);
+
+LunchStart: ticks(DAY);
+LunchEnd: ticks(DAY);
+LunchStart = left(LunchHour);
+LunchEnd = right(LunchHour);
+
+SpecialLunch: intervals(DAY);
+length(LunchHour) = 1;
+length(SpecialLunch) = 2;
+[h1, h2]: SpecialLunch;
