@@ -75,11 +75,6 @@ cyclic
 sequence
 subsequence
 using standard.arithmetic;
-decimal : implements(real);
-aaa: implements(natural1);
-naturall0
-integer
-
 
 https://chatgpt.com/share/68affa55-cf34-8010-b177-593f3a4250cb
 
@@ -94,7 +89,7 @@ x <= 19 ?  5 ,
 partitions
 S = P1 | P2 | P3 | P4 | P5; 
 x: S;
-f: P4 -> integer;
+f: P4 -> N0';
 g: S -> integer;
 
 x ? P1 | P2 -> 7 ,
@@ -176,3 +171,56 @@ data; // tests, examples
 query; // transaction script
 
 problem; // model for external optimizer, algorithm
+
+
+B: P'(A);  // B subset of a
+B <' C;
+B <=' C;
+B u' C;
+B n' C;
+
+a in' A;
+a not' A;
+
+B | C | D;
+A & B & C;
+
+forall{}
+exists{}
+unique{}
+union{}
+intersection/inter{}
+sum{}
+product/prod{}
+maximum/max{}
+minimum/min{}
+average/avg{}
+
+cardinality/card
+
+
+Z'
+Q'
+R'
+N0'
+N1'
+
+R'(..Blah);
+
+decimal : reify(R');
+float1 : reify(R'); 
+
+smalln: reify(N1');
+smalln(2..Blah);
+
+not or and
+
+Syntelion indices start from 0
+
+<. > // tuple
+() // function application, associativity disambiguation
+
+[,] // sequence/bijection 
+length([])
+slice: N1, ...
+
