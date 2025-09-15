@@ -6,11 +6,11 @@ using standard.discrete
 
 PRODUCT: set;
 
-USD: unit;
-PRODUCT_UNIT: unit(PRODUCT);
+`US$`: unit;
+PRODUCT_UNIT:  PRODUCT >->> unit;
 
-n: natural(>=1);
+n: N1';
 PLANNING_HORIZON: discrete(n);
 T: indices(PLANNING_HORIZON);
 
-ProductCost: x:PRODUCT -> USD/PRODUCT_UNIT(x);
+ProductCost: x:PRODUCT -> `US$`/PRODUCT_UNIT(x);

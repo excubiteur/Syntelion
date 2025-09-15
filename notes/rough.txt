@@ -224,3 +224,15 @@ Syntelion indices start from 0
 length([])
 slice: N1, ...
 
+
+`minute` = 60*`s`;
+`h`   = 60*`minute`;
+`km`     = 1000*`m`;  
+`km/h`   = `km`/`h`;
+
+`$`: unit;
+
+CAR_UNIT: CAR >->> unit;
+
+CAR_PRICE: c: CAR -> `$`/CAR_UNIT(c);
+
