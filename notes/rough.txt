@@ -234,5 +234,5 @@ slice: N1, ...
 
 CAR_UNIT: CAR >->> unit;
 
-CAR_PRICE: c: CAR -> `$`/CAR_UNIT(c);
+CAR_PRICE: (c: CAR) -> `$`/CAR_UNIT(c);
 
