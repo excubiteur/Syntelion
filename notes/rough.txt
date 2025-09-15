@@ -239,3 +239,5 @@ CAR_UNIT: CAR >->> unit;
 
 CarPrice: (c: CAR) -> `$`/CAR_UNIT(c);
 
+Semantics for parquet data
+
