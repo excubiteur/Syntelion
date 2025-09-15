@@ -239,5 +239,11 @@ CAR_UNIT: CAR >->> unit;
 
 CarPrice: (c: CAR) -> `$`/CAR_UNIT(c);
 
-Semantics for parquet data
+BR engine on parquet, arrow, DuckDB instead of Java objects
+Option for "Assert" = populating arrow 
+DuckDB scan from OLTP
+Semantics for parquet and arrow data
+
+
+
 
