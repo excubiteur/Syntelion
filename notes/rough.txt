@@ -123,7 +123,7 @@ A <' B // strict subset
 A <=' B // subset
 A n' B // intersection
 A u' B // union
-x in A // set membership
+x e' A // set membership
 
 union{x: ....}
 intersection{... }
@@ -179,13 +179,13 @@ B <=' C;
 B u' C;
 B n' C;
 
-a in' A;
-a not' A;
+a e' A;
+a !e' A;
 
 B | C | D;
 A & B & C;
 
-forall{}
+forall{ x: A | filter(x) } pred(a)
 exists{}
 unique{}
 union{}
