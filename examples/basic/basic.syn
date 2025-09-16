@@ -50,5 +50,16 @@ example Data
 
 ill-formed-begin TypeOfVariables;
     include Data;
-    SomeVar := "a";
+    SomeVar2 :SOME_SET;
+    SomeVar2 := "a";
 ill-formed-end;
+
+example Mixed
+{
+    include Data;
+    SomeVar2 :SOME_SET;
+
+    ill-formed-begin
+    SomeVar2 := "a";
+    ill-formed-end;
+}
