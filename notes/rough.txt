@@ -12,7 +12,7 @@ s as <a, b, c>
 
 order vs sequence
 
-CITYT = A | B | C 
+A | B | C ::= CITY; 
 
 https://chatgpt.com/share/68bb7ae4-2c1c-8010-8662-4f37347dcfef
 
@@ -87,7 +87,13 @@ x <= 19 ?  5 ,
            3 ;
 
 partitions
-S = P1 | P2 | P3 | P4 | P5; 
+S: set;
+P1 | P2 | P3 | P4 | P5 ::= S;
+Q1 | Q2 | Q3 | Q4 | Q5 ::= S;
+
+T ::= T1 | T2 | T3;
+U1 | U2 | U3 ::= T;
+
 x: S;
 f: P4 -> N0';
 g: S -> integer;
@@ -172,15 +178,16 @@ query; // transaction script
 
 problem; // model for external optimizer, algorithm
 
-
+// ticks optional
+// omit after first few lessons.
 B: P'(A);  // B subset of a
 B <' C;
 B <=' C;
 B u' C;
 B n' C;
 
-a e' A;
-a !e' A;
+a in' A;
+a not' A;
 
 B | C | D;
 A & B & C;
@@ -247,4 +254,6 @@ Data consistency checks
 
 Generate sqlite/DDL as interface spec and for development
 
+Analysis Patterns
+Data Model Patters
 
