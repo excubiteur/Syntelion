@@ -20,7 +20,7 @@ module A.B includes A
 
 include A implies A.*
 
-model query problem projection.          BlahVar: boolvar   KKVar: intval.   NNVat:floatvar.      BlahVar <-> AbSet & CcSet;        problem ....
+model query problem    BlahVar: boolvar   KKVar: intval.   NNVat:floatvar.      BlahVar <-> AbSet & CcSet;        problem ....
 
 implementation   lookup(lazy, eager) procedure(MEMOIZED:bool).  id_type.   sql, host_method EAGER, LAZY, LAZY_AND_MEMOIZED, model(projection_params)
 
@@ -268,3 +268,36 @@ without parachuting another language in.
 Overkill for shopping cart
 
 CLI loads model, creates SQLite, launches DB4S, reloads model on code editor changes
+
+model Alpha;
+
+model A;
+include Alpha;
+endmodel; // optional
+
+query B;
+include A;
+endquery; // optional
+
+problem C;
+include B;
+endproblem; // optional
+
+data X;
+include A;
+...
+....
+
+data Y;
+include X;
+...
+
+data Z;
+include X;
+enddata; //optional
+
+test T;
+include Z;
+include B;
+endtest; // optional
+
