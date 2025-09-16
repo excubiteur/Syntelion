@@ -246,6 +246,12 @@ CAR_UNIT: CAR >->> unit;
 
 CarPrice: (c: CAR) -> `$`/CAR_UNIT(c);
 
+no 
+TotalWrong := sum{a:CAR} CarPrice(a); 
+
+yes 
+TotalRight := sum{a:CAR} CarPrice(a)*CAR_UNIT(a); 
+
 BR engine on parquet, arrow, DuckDB instead of Java objects
 Option for "Assert" = populating arrow 
 DuckDB scan from OLTP DB
