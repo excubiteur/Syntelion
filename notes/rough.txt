@@ -267,3 +267,4 @@ without parachuting another language in.
 
 Overkill for shopping cart
 
+CLI loads model, creates SQLite, launches DB4S
