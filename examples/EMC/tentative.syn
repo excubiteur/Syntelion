@@ -54,11 +54,12 @@ example Blah2
 
 }
 
-// Editor can hide
-illformed "..."
-{
-    // fails if compiler succeeds
-}
+    // Editor can hide
+    ill-formed-begin "...";
+
+        // fails if compiler succeeds
+
+    ill-formed-end;
 
 
 Meter: 
