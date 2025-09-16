@@ -35,9 +35,16 @@ section "Subblah 1"   // "Blah 1"."Subblah 1" to editor
 
 }
 
-// Editor can hide
-example "..."
+example Blah1
 {
+
+}
+
+// Editor can hide
+example Blah2
+{
+    include Blah1;
+    
     B = { a, b, c};
 
     { x:X @ <x, Func(x), Map(x)> } = {
