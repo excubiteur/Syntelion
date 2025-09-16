@@ -248,7 +248,7 @@ CarPrice: (c: CAR) -> `$`/CAR_UNIT(c);
 
 BR engine on parquet, arrow, DuckDB instead of Java objects
 Option for "Assert" = populating arrow 
-DuckDB scan from OLTP
+DuckDB scan from OLTP DB
 Semantics for parquet and arrow data
 Data consistency checks
 
@@ -256,4 +256,14 @@ Generate sqlite/DDL as interface spec and for development
 
 Analysis Patterns
 Data Model Patters
+
+Stateless immutable
+Output to host - sandbox
+Save to SQLite/DuckDB/Parquet - reproducible state
+Complex billing, settlements
+AMPL with units and more compile time constructs (type system) and data treansformation.
+JRules, Drools with no RETE to mystify clear models and add unecessary overhead and 
+without parachuting another language in.
+
+Overkill for shopping cart
 
