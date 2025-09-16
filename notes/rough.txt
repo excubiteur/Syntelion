@@ -301,3 +301,11 @@ include Z;
 include B;
 endtest; // optional
 
+Aggregates, entities, values are the details of  
+the machine unnecessarily leaking into your
+modeling formalism.
+
+Anemic object model? 
+The most succesful ERP is Excel. 
+The transaction scripts are macros, VBA and humans.
+You measure accumulated calories wrongly.
