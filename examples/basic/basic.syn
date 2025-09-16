@@ -40,15 +40,15 @@ ill-formed-end;
 example Data
 {
     data;
-    SOME_SET = { a, b, c};
-    ANOTHER_SET {"a", "b", "c"};
-    YET_ANOTHER_SET {a, b, c};    
-    SomeVar = a;
-    AnotherVar = "a";
+    SOME_SET := { a, b, c};
+    ANOTHER_SET := {"a", "b", "c"};
+    YET_ANOTHER_SET := {a, b, c};    
+    SomeVar := a;
+    AnotherVar := "a";
     YetAnotherVar = a;
 }
 
 ill-formed-begin TypeOfVariables;
     include Data;
-    SomeVar = "a";
+    SomeVar := "a";
 ill-formed-end;
