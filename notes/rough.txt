@@ -309,3 +309,5 @@ Anemic object model?
 The most succesful ERP is Excel. 
 The transaction scripts are macros, VBA and humans.
 You measure accumulated calories wrongly.
+
+As microservice
