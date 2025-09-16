@@ -243,7 +243,8 @@ BR engine on parquet, arrow, DuckDB instead of Java objects
 Option for "Assert" = populating arrow 
 DuckDB scan from OLTP
 Semantics for parquet and arrow data
+Data consistency checks
 
-
+Generate sqlite/DDL as interface spec and for development
 
 
