@@ -2,6 +2,7 @@ model Intro
 
 SOME_SET, ANOTHER_SET: set;
 YET_ANOTHER_SET: set;
+
 AN_ORDERED_SET:: ordered;
 
 SomeVar: SOME_SET;

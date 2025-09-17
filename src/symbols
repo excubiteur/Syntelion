@@ -7,3 +7,57 @@
 >+>  ⤔
 >+>> ⤗
 +>>  ⤀
+
+in'
+not'
+
+u'
+n'
+
+<' 
+<='
+\' 
+
+<'' 
+<='' 
+\''
+
+
+
+union
+intersection/inter 
+sum 
+product/prod 
+forall
+exists 
+unique
+...{variables | filter @ expression}
+
+
+first 
+last
+next(x) ? value v -> ..., ... 
+previous/prev
+
+(x, y, x)  tuple/deconstructor
+
+
+ticks optional
+
+bag { (a, 1), (b, 7), (c, 10) }
+sequence { (0, a), (1, b), (2, c)};
+
+SOME_SET: ordered;
+OTHER_SET: set;
+
+SequenceA: order(SOME_SET);
+SequenceB: order(OTHER_SET);
+
+(a, b): slices(SOME_SET)
+c: slices(2, SOME_SET)
+d: slices(2, SequenceA)
+e: slices(2, SequenceB)
+f: slices(2, circular(SequenceB)) //circular
+f[0]
+
+SOME_SET := [a, b, c];
