@@ -1,4 +1,4 @@
-module BasicSyntaxExample;
+module BasicSyntaxExample
 
 SOME_SET, ANOTHER_SET: set;
 YET_ANOTHER_SET: set;
@@ -19,9 +19,9 @@ example UncheckedComments
     // Anything here
 }
 
-ill-formed-begin;
+ill-formed-begin
 /**/*/
-ill-formed-end;
+ill-formed-end
 
 example CheckedComments
 {
@@ -32,14 +32,14 @@ example CheckedComments
     //code: But no comments in the checked expression
 }
 
-ill-formed-begin CheckedComments;
+ill-formed-begin CheckedComments
     // Your comment can check for typos like code(SOM_SET)
     // Less confusion, helps keep comments up to date
-ill-formed-end;
+ill-formed-end
 
 example Data
 {
-    data;
+    data
     SOME_SET := { a, b, c};
     ANOTHER_SET := {"a", "b", "c"};
     YET_ANOTHER_SET := {a, b, c};    
@@ -48,15 +48,15 @@ example Data
     YetAnotherVar = a;
 }
 
-ill-formed-begin TypeOfVariables;
-    include Data;
+ill-formed-begin TypeOfVariables
+    include Data
     SomeVar2 :SOME_SET;
     SomeVar2 := "a";
-ill-formed-end;
+ill-formed-end
 
 example Mixed
 {
-    include Data;
+    include Data
     SomeVar2 :SOME_SET;
 
     ill-formed-begin

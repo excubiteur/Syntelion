@@ -1,0 +1,34 @@
+model Intro
+
+SOME_SET, ANOTHER_SET: set;
+YET_ANOTHER_SET: set;
+AN_ORDERED_SET:: ordered;
+
+SomeVar: SOME_SET;
+AnotherVar: ANOTHER_SET;
+YetAnotherVar: YET_ANOTHER_SET;
+
+CARTES: (SOME_SET, ANOTHER_SET)';
+
+PARTIONED_SET ::= A | B | C; // set defined as partion, can be disambiguated PARTIONED_SET.A
+
+D | E ::= PARTIONED_SET; // partition defined on a set, can be disambiguated PARTIONED_SET.D
+
+F | G | H ::= YET_ANOTHER_SET; 
+
+SomeFunc: A -> Z';  
+AnotherFunc: B -> Z';  
+TheFunc: x: PARTIONED_SET -> Z' ::= 
+    x ? a: A -> SomeFunc(a),
+        b: B -> AnotherFunc(b),
+        _    -> 15;
+
+PureArith : x: Z' -> Z' ::=
+    x <= 10 ? 100,
+    x <= 89 ? 1000,
+              10000;
+
+
+query TransactionScriptA
+
+SomeSum ::= sum{x: PARTIONED_SET | x not' C @ TheFunc(x)}; 
