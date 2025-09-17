@@ -33,3 +33,42 @@ PureArith : x: Z' -> Z' ::=
 query TransactionScriptA
 
 SomeSum ::= sum{x: PARTIONED_SET | x not' C @ TheFunc(x)}; 
+
+
+
+model BlahA
+
+
+query Abc
+
+include BlahA
+
+parameters/params
+
+x:T;
+
+output
+
+Assign: X -> R';
+
+
+problem OptimizeA
+
+include BlahA
+
+parameters
+
+solver MILP
+
+AssignmentVar: (x: CITY, y: CITY) -> intvar(lb(x), lb(y));
+
+constraint{..} lb(x) <= 
+
+solution
+
+Assignment: (x: CITY, y: CITY) -> Z' ::= AssignmentVar(x, y);
+
+
+solver LP
+
+solver ABC
