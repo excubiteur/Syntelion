@@ -3,6 +3,11 @@
 {-# LANGUAGE KindSignatures #-}
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE TypeApplications #-}
+{-# LANGUAGE UndecidableInstances #-}
+{-# LANGUAGE AllowAmbiguousTypes #-}
+{-# LANGUAGE MonoLocalBinds #-}
+{-# LANGUAGE StarIsType #-}
+{-# OPTIONS_GHC -Wno-star-is-type #-}
 
 import Data.Bits
 import Data.Word
