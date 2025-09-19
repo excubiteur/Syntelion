@@ -317,3 +317,34 @@ The transaction scripts are macros, VBA and humans.
 You measure accumulated calories wrongly.
 
 As microservice
+
+Set
+
+Ordered
+
+Subset
+
+Sequence
+
+Bag
+
+Relation
+R <=' (A, B);
+
+Function
+f: A -> B;
+
+domain
+codomain
+
+| **Operation**               | **Relations**                               | **Functions (special case)**                                                                      |
+| --------------------------- | ------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Domain** $\dom R$         | All $x$ that appear in some pair            | Domain of function                                                                                |
+| **Range** $\ran R$          | All $y$ that appear in some pair            | Image of function                                                                                 |
+| **Image** $R[S]$            | All $y$ such that $(x,y) \in R, x \in S$    | Same, but set has ≤ 1 element for each $x$                                                        |
+| **Inverse** $R^{\sim}$      | Always defined, may not be a function       | For injective functions, inverse is a function                                                    |
+| **Composition** $R \circ S$ | Relational composition                      | Function composition when both operands are functions                                             |
+| **Restriction** $A \dres R$ | Keep only pairs with domain in $A$          | Same, just trims function’s domain                                                                |
+| **Override** $R \oplus S$   | Replace mappings in $R$ with those from $S$ | Function update (like $f[x \mapsto y]$)                                                           |
+| **Closures** $R^*, R^+$     | Reflexive-transitive closure                | Rarely applied to functions, since functions are not typically transitive relations               |
+| **Properties**              | Reflexive, symmetric, transitive, etc.      | Functions are never symmetric unless trivial (like identity), not usually reflexive or transitive |
