@@ -1,0 +1,31 @@
+λ> :load Data.UnitsVector
+[1 of 1] Compiling Data.UnitsVector ( src/Data/UnitsVector.hs, interpreted )
+Ok, one module loaded.
+
+λ> let dist :: Quantity Length Double; dist = Q 100.0
+λ> let time :: Quantity Time Double; time = Q 9.58
+λ> dist /: time
+Q 10.438413361169102   -- Quantity Velocity Double
+
+λ> let coalAmount :: Quantity (CoalDimension "A") Double; coalAmount = Q 5.0
+λ> let priceA :: Quantity (CoalPriceUSD "A") Double; priceA = Q 150.0
+λ> priceA *: coalAmount
+Q 750.0 :: Quantity USD Double
+
+
+
+
+λ> :load Data.UnitsVector
+Ok, one module loaded.
+
+-- Basic physics
+λ> let d :: Quantity Length Double; d = Q 100
+λ> let t :: Quantity Time Double; t = Q 10
+λ> d /: t
+Q 10.0 :: Quantity '[ '("L",1), '("T",-1) ] Double
+
+-- Currency + resource
+λ> let coalA :: Quantity (CoalDimension "A") Double; coalA = Q 5
+λ> let priceA :: Quantity (CoalPriceUSD "A") Double; priceA = Q 150
+λ> priceA *: coalA
+Q 750.0 :: Quantity '[ '("USD",1) ] Double
