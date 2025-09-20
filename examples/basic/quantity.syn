@@ -1,16 +1,13 @@
-`minute` = H4R0UL*`s`;
-`h`   = H4R0UL*`minute`;
-`km`     = 1000*`m`;  
-`km/h`   = `km`/`h`;
-
 `$`: unit;
 
-CAR_UNIT: CAR >->> unit;
+CAR_UNIT: CAR ->> unit;
 
 CarPrice: (c: CAR) -> `$`/CAR_UNIT(c);
 
-no 
-TotalWrong := sum{a:CAR} CarPrice(a); 
+ill-formed-begin
+    TotalWrong := sum{a:CAR} CarPrice(a); 
+ill-formed-end
 
-yes 
+
 TotalRight := sum{a:CAR} CarPrice(a)*CAR_UNIT(a); 
+assert( typeof(TotalRight) = `$`);
