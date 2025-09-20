@@ -1,0 +1,24 @@
+forall{ x: A | filter(x) } pred(a)
+exists{}
+unique{}
+union{}
+intersection/inter{}
+sum{}
+product/prod{}
+maximum/max{}
+minimum/min{}
+average/avg{}
+
+forall{[from, to]: X |  }
+forall{[from, _, to]: C |  }
+
+forall{s: sequences(n, C) | forall{ m:? :...s@m...  } // to do
+
+union{x: ....}
+intersection{... }
+sum{... }
+forall{...}
+exists{...}
+unique{...}
+
+

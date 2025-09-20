@@ -1,0 +1,45 @@
+using standard.line;
+TIME_MODEL_DAY: discretized_finite(24);
+HOUR_SEGMENT : discretized_segment(TIME_MODEL_DAY);
+HOURS_INTERVAL : discretized_interval(TIME_MODEL_DAY);
+HOUR_POINT : discretized_point(TIME_MODEL_DAY);
+HOUR_SEGMENT_INDEX : segment_index(TIME_MODEL_DAY);
+POINT_SEGMENT_INDEX : segment_index(TIME_MODEL_DAY);
+CONSECUTIVE : 
+TIME_MODEL_HOUR: discretized_finite(60);
+MINUTE_SEGMENT : discretized_segment(TIME_MODEL_HOUR);
+MINUTE_INTERVAL : discretized_interval(TIME_MODEL_HOUR);
+MINUTE_POINT : discretized_point(TIME_MODEL_HOUR);
+MINUTE_SEGMENT_INDEX : segment_index(TIME_MODEL_HOUR);
+MINUTE_SEGMENT_INDEX : segment_index(TIME_MODEL_HOUR);
+MINUTE_SEGMENTS_OF_DAY alias HOUR_SEGMENT & MINUTE_SEGMENT  
+using standard.sequence;
+IS_BEFORE : A -> A - > bool;
+cyclic
+sequence
+subsequence
+using standard.arithmetic;
+
+DAY: discrete(24);
+HOUR: indices(DAY);
+
+LunchHour: HOUR;
+
+Lunch: slots(DAY);
+Lunch = slot(LunchHour);
+
+LunchStart: ticks(DAY);
+LunchEnd: ticks(DAY);
+LunchStart = left(LunchHour);
+LunchEnd = right(LunchHour);
+
+SpecialLunch: intervals(DAY);
+length(LunchHour) = 1;
+length(SpecialLunch) = 2;
+[h1, h2]: SpecialLunch;
+
+discrete indices ticks slots intervals left right all  length HOUR & MINUTE & SECOND
+
+left/begin right/end
+
+indices and slots are ordered sets

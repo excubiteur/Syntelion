@@ -1,0 +1,119 @@
+module A.B includes A
+
+include A implies A.*
+
+model query problem    BlahVar: boolvar   KKVar: intval.   NNVat:floatvar.      BlahVar <-> AbSet & CcSet;        problem ....
+
+implementation   lookup(lazy, eager) procedure(MEMOIZED:bool).  id_type.   sql, host_method EAGER, LAZY, LAZY_AND_MEMOIZED, model(projection_params)
+
+module Accounting
+model Blah
+include ParentBlah
+data OptionalName
+include Blah
+query BillPerMonth
+bindings
+x: Month
+results
+
+
+
+model Alpha;
+
+model A;
+include Alpha;
+endmodel; // optional
+
+query B;
+include A;
+endquery; // optional
+
+problem C;
+include B;
+endproblem; // optional
+
+data X;
+include A;
+...
+....
+
+data Y;
+include X;
+...
+
+data Z;
+include X;
+enddata; //optional
+
+test T;
+include Z;
+include B;
+endtest; // optional
+
+Set
+
+Ordered
+
+Subset
+
+Sequence
+
+Bag
+
+Relation
+
+
+
+model;
+
+data; // tests, examples
+
+query; // transaction script
+
+problem; // model for external optimizer, algorithm
+
+model BlahA
+
+query Abc
+
+include BlahA
+
+parameters/params
+
+
+
+
+
+query TransactionScriptA
+
+
+
+
+
+x:T;
+
+output
+
+Assign: X -> R';
+
+
+problem OptimizeA
+
+include BlahA
+
+parameters
+
+solver MILP
+
+AssignmentVar: (x: CITY, y: CITY) -> intvar(lb(x), lb(y));
+
+constraint{..} lb(x) <= 
+
+solution
+
+Assignment: (x: CITY, y: CITY) -> Z' ::= AssignmentVar(x, y);
+
+
+solver LP
+
+solver ABC

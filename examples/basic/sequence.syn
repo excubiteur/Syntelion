@@ -1,0 +1,15 @@
+[,] // sequence/bijection 
+length([])
+slice: N1, ...
+
+s as <a, b, c>
+
+order vs sequence
+
+[...] typed sequence. <> tuple,  { } structured compound expressions, () explict order of evaluation, siambiguation, function arguments 
+
+traverse(x:OrderedSet) {....    produces a sequence  fold???? fold(binaryop, init_value) {}
+
+`forall`, `sequences` prose and code comments
+forall{x: sequences(4, CITY) | forall{y: x} @  )
+[a, b, c, d]: CITY

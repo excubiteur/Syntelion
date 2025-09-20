@@ -32,3 +32,28 @@ example Mixed
     SomeVar2 := "a";
     ill-formed-end;
 }
+
+// ticks optional
+// omit after first few lessons.
+B: P'(A);  // B subset of a
+B <' C;
+B <=' C;
+B u' C;
+B n' C;
+
+a in' A;
+a not' A;
+
+powerset(A) 
+
+A: set; // FiniteType, MaximalSet
+X: ordered; // FiniteType, MaximalSet
+
+B: powerset(A); // FiniteSet
+
+C: order(A);
+
+
+cardinality/card
+
+

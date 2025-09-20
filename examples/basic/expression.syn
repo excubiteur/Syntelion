@@ -1,0 +1,21 @@
+boolexpr ? val_if_true, val_if_alse
+x <= 5  ?  4 ,
+x <=10  ? 17 ,
+x <= 19 ?  5 ,
+           3 ;
+
+not, and, or
+
+not or and
+
+SomeFunc: A -> Z';  
+AnotherFunc: B -> Z';  
+TheFunc: x: PARTIONED_SET -> Z' ::= 
+    x ? a: A -> SomeFunc(a),
+        b: B -> AnotherFunc(b),
+        _    -> 15;
+
+PureArith : x: Z' -> Z' ::=
+    x <= 10 ? 100,
+    x <= 89 ? 1000,
+              10000;

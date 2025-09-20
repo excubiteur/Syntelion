@@ -1,0 +1,6 @@
+
+x: nullable(integer);
+x ? value y -> y , 15;
+
+f:S -> nullable(integer);
+x: { x:S: valued(f(x)) };

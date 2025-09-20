@@ -1,0 +1,13 @@
+Z'
+Q'
+R'
+N0'
+N1'
+
+R'(..Blah);
+
+decimal : reify(R');
+float1 : reify(R'); 
+
+smalln: reify(N1');
+smalln(2..Blah);

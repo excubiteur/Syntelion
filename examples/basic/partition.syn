@@ -1,0 +1,26 @@
+PARTIONED_SET ::= A | B | C; // set defined as partion, can be disambiguated PARTIONED_SET.A
+
+D | E ::= PARTIONED_SET; // partition defined on a set, can be disambiguated PARTIONED_SET.D
+
+F | G | H ::= YET_ANOTHER_SET; 
+S: set;
+P1 | P2 | P3 | P4 | P5 ::= S;
+Q1 | Q2 | Q3 | Q4 | Q5 ::= S;
+
+T ::= T1 | T2 | T3;
+U1 | U2 | U3 ::= T;
+
+
+A | B | C ::= CITY; 
+
+x: S;
+f: P4 -> N0';
+g: S -> integer;
+
+x ? P1 | P2 -> 7 ,
+    P3 -> 8 ,
+    y: P4 -> f(y) ,
+    P5 -> g(x), 
+    10 ;
+
+SomeSum ::= sum{x: PARTIONED_SET | x not' C @ TheFunc(x)}; 
