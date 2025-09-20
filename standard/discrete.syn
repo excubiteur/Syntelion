@@ -1,16 +1,25 @@
 model standard.discrete
 
-concept discrete(segments: N1')
+concept grid1d(size: N1')
 {
-    segments ::= segments;
+    size ::= size;
 
     indexes: ordered;    
-    ticks: ordered;
-    slots: ordered;
+    nodes: ordered;
+    cells: ordered;
 
-    left: indexes -> ticks;
-    right: indexes -> ticks;
-    slot: indexes -> slots;
+    left: indexes -> nodes;
+    right: indexes -> npdes;
+    cell: indexes -> cells;
 
-    index: N0'(..segments-1) -> indexes;
+    index: N0'(..size-1) -> indexes;
+}
+
+concept time(horizon: N1') extends grid1d(horizon)
+{
+    horizon is size;
+    ticks is nodes;
+    slots is cells;
+    start is left;
+    end is right;
 }
