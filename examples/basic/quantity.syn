@@ -1,13 +1,10 @@
-Fix:
-https://chatgpt.com/share/68cec9d9-98dc-8010-8914-3a4a4ab2884f
-
 `$`: unit;
 
 // Units can model external quantity types
 // Apples and oranges as different units 
 // are abstracted away by the model
 // Must be injection
-CAR_UNIT: CAR ->> unit;
+CAR_UNIT{CAR}: unit;
 
 CarPrice: (c: CAR) -> `$`/CAR_UNIT(c);
 
