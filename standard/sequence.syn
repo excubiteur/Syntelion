@@ -1,0 +1,11 @@
+
+concept index(length: N0')
+{
+    range: start: N0'(..length-1), size: N1'(..remainder(start)) -> 
+}
+
+concept sequence(T: set, length: N0') extends this : N0'(..length) -> T
+{
+    
+    splice: n: N0'(..length) -> sequence(T, n);
+}
