@@ -1,10 +1,6 @@
 module BasicSyntaxExample
 
-SOME_SET, ANOTHER_SET: set;
-YET_ANOTHER_SET: set;
-SomeVar: SOME_SET;
-AnotherVar: ANOTHER_SET;
-YetAnotherVar: YET_ANOTHER_SET;
+SOME_SET: set;
 
 // example names and ill formed section names each have their
 // own namespace and can be anonymous
@@ -21,6 +17,9 @@ example UncheckedComments
 
 ill-formed-begin
 /**/*/
+random stuff to fail compilation
+%$ because for overall compilation
+to suCeds%d, this needs to f4il.
 ill-formed-end
 
 example CheckedComments
@@ -29,7 +28,7 @@ example CheckedComments
         You can talk about code(SOME_SET) without typos;
     **//
     /*code: You can make sure you talk about correct code(NEW_SET: set;) */ 
-    //code: But no comments in the checked expression
+    //code: But no comments inside code()
 }
 
 ill-formed-begin CheckedComments
@@ -37,29 +36,14 @@ ill-formed-begin CheckedComments
     // Less confusion, helps keep comments up to date
 ill-formed-end
 
-example Data
+example IllFormed
 {
+    SomeVar :SOME_SET;
+    
     data
     SOME_SET := { a, b, c};
-    ANOTHER_SET := {"a", "b", "c"};
-    YET_ANOTHER_SET := {a, b, c};    
-    SomeVar := a;
-    AnotherVar := "a";
-    YetAnotherVar = a;
-}
-
-ill-formed-begin TypeOfVariables
-    include Data
-    SomeVar2 :SOME_SET;
-    SomeVar2 := "a";
-ill-formed-end
-
-example Mixed
-{
-    include Data
-    SomeVar2 :SOME_SET;
 
     ill-formed-begin
-    SomeVar2 := "a";
+    SomeVar := "a";
     ill-formed-end;
 }
