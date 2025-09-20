@@ -1,0 +1,16 @@
+model standard.discrete
+
+concept discrete(segments: N1')
+{
+    segments ::= segments;
+
+    indexes: ordered;    
+    ticks: ordered;
+    slots: ordered;
+
+    left: indexes -> ticks;
+    right: indexes -> ticks;
+    slot: indexes -> slots;
+
+    index: N'0'(..segments-1) -> indexes;
+}
