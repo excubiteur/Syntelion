@@ -1,0 +1,11 @@
+model standard.clock
+
+include model standard.discrete
+
+MINUTE: time(60);
+
+HOUR: time(60);
+minute: indexes(HOUR) -> MINUTE;
+
+DAY: time(24);
+hour: indexes(DAY) -> HOUR;
