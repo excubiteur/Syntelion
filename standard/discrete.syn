@@ -12,5 +12,5 @@ concept discrete(segments: N1')
     right: indexes -> ticks;
     slot: indexes -> slots;
 
-    index: N'0'(..segments-1) -> indexes;
+    index: N0'(..segments-1) -> indexes;
 }
