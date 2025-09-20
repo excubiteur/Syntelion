@@ -1,4 +1,3 @@
-{-# LANGUAGE AllowAmbiguousTypes #-}
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE TypeApplications #-}
 {-# LANGUAGE FlexibleInstances #-}
@@ -7,14 +6,18 @@ import Data.Bits
 import Data.Proxy
 import Text.Printf
 
--- === Type Classes ===
+-- === Base classes ===
 
--- Any finite set type that is Enum + Bounded automatically gets cardinality
-class (Eq t, Enum t, Bounded t) => Set t where
-  cardinality :: Int
-  cardinality = fromEnum (maxBound :: t) + 1
+-- | Any Enum + Bounded type is a finite set.
+class (Enum t, Bounded t) => Set t where
+  cardinality :: proxy t -> Int
+  cardinality _ = fromEnum (maxBound @t) + 1
 
-class (Ord t, Set t) => Ordered t where
+  universe :: [t]
+  universe = [minBound .. maxBound]
+
+-- | Ordered sets are finite sets with a natural ordering.
+class (Set t, Ord t) => Ordered t
 
 -- === Subset type ===
 
@@ -22,62 +25,62 @@ newtype Subset t = Subset Integer
   deriving (Eq, Bits)
 
 instance Set t => Show (Subset t) where
-  show (Subset i) = "0b" ++ printf "%0*b" width i
-    where
-      width = cardinality @t
+  show (Subset i) = "0b" ++ printf "%0*b" (cardinality (Proxy @t)) i
 
 subset :: Integer -> Subset t
 subset = Subset
 
 -- === Bitwise operations ===
 
-union :: Subset t -> Subset t -> Subset t
+union, intersection :: Subset t -> Subset t -> Subset t
 union = (.|.)
-
-intersection :: Subset t -> Subset t -> Subset t
 intersection = (.&.)
 
 complementSubset :: forall t. Set t => Subset t -> Subset t
 complementSubset (Subset i) = Subset (i `xor` mask)
   where
-    mask = (1 `shiftL` cardinality @t) - 1
+    mask = (1 `shiftL` cardinality (Proxy @t)) - 1
 
 -- === Powerset generation ===
 
 powerset :: forall t. Set t => [Subset t]
 powerset = [ Subset i | i <- [0 .. maxVal] ]
   where
-    maxVal = 2 ^ cardinality @t - 1
+    maxVal = 2 ^ cardinality (Proxy @t) - 1
 
 -- === Conversion between Subset and list of elements ===
 
-subsetToList :: forall t. (Set t, Enum t, Bounded t) => Subset t -> [t]
+subsetToList :: forall t. Set t => Subset t -> [t]
 subsetToList (Subset i) = [ x | (x, idx) <- zip universe [0..], testBit i idx ]
-  where
-    universe = [minBound .. maxBound]
 
-listToSubset :: forall t. (Set t, Enum t, Bounded t) => [t] -> Subset t
+listToSubset :: forall t. Set t => [t] -> Subset t
 listToSubset xs = Subset $ foldr (\x acc -> setBit acc (fromEnum x)) 0 xs
 
--- === Example set with minimal boilerplate ===
+-- === Example DSL outputs ===
 
-data SomeSet = A0 | A1 | A2 | A3 | A4 | A5 | A6 | A7 | A8 | A9
+-- From "SomeSet: set;"
+data SomeSet = A0 | A1 | A2 | A3 | A4
+  deriving (Eq, Show, Enum, Bounded)
+
+instance Set SomeSet
+
+-- From "AnotherSet: ordered;"
+data AnotherSet = B0 | B1 | B2
   deriving (Eq, Show, Enum, Bounded, Ord)
 
-instance Set SomeSet  -- cardinality auto-derived
+instance Set AnotherSet
+instance Ordered AnotherSet
 
--- === Example usage ===
+-- === Demo ===
 
 s1 :: Subset SomeSet
-s1 = listToSubset [A0, A1]  -- 0b0000000011
+s1 = listToSubset [A0, A1]
 
 s2 :: Subset SomeSet
-s2 = listToSubset [A0]      -- 0b0000000001
+s2 = listToSubset [A0]
 
 allSubsets :: [Subset SomeSet]
 allSubsets = powerset @SomeSet
-
--- === Demo main ===
 
 main :: IO ()
 main = do
