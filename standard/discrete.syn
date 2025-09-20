@@ -7,6 +7,7 @@ concept grid1d(size: N1')
     indexes: ordered;    
     nodes: ordered;
     cells: ordered;
+    extents: sequence of cells
 
     left: indexes -> nodes;
     right: indexes -> npdes;

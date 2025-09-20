@@ -5,3 +5,7 @@ include model standard.clock
 WEEK: time(7);
 day_of_week: indexes(WEEK) -> DAY;
 
+concept month(days: N1)
+{
+    days: 
+}
