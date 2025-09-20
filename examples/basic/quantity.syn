@@ -1,13 +1,18 @@
 `$`: unit;
 
+// Units can model external quantity types
+// Apples and oranges as different units 
+// are abstracted away by the model
+// Must be injection
 CAR_UNIT: CAR ->> unit;
 
 CarPrice: (c: CAR) -> `$`/CAR_UNIT(c);
 
+// Dimensions and arithmetic are checked 
+// No adding of apples to oranges
 ill-formed-begin
     TotalWrong := sum{a:CAR} CarPrice(a); 
 ill-formed-end
-
 
 TotalRight := sum{a:CAR} CarPrice(a)*CAR_UNIT(a); 
 assert( typeof(TotalRight) = `$`);
