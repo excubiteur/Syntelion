@@ -2,6 +2,7 @@ module BasicSyntaxExample
 
 SOME_SET, ANOTHER_SET: set;
 YET_ANOTHER_SET: set;
+INDEXED_SET(SOME_SET): set;
 SomeVar: SOME_SET;
 AnotherVar: ANOTHER_SET;
 YetAnotherVar: YET_ANOTHER_SET;
@@ -12,6 +13,7 @@ example Data
     SOME_SET := { a, b, c};
     ANOTHER_SET := {"a", "b", "c"};
     YET_ANOTHER_SET := {a, b, c};    
+    INDEXED_SET := { (a, {x1, x2, x3}), (b, {y1, y2, y3, y4}), (c, {z1, z2}) };
     SomeVar := a;
     AnotherVar := "a";
     YetAnotherVar = a;

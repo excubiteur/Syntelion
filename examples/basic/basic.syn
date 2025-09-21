@@ -1,11 +1,5 @@
 module BasicSyntaxExample
 
-// In the global scope ":"
-// constructs objects.
-// code(SOME_SET) is not a variable,
-// it is an instance of set.
-// In other contexts, what is on the
-// left of ":" is a variable
 SOME_SET: set;
 
 // example names and ill formed section names each have their
