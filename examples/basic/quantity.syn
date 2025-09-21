@@ -12,7 +12,7 @@ COUNTRY: {murica} | B52_TARGETS; //disjoint union/sum type
 CURRENCY: c: COUNTRY -> CURRENCY_UNIT 
     ::= c ?   // pattern match on sum type
         {murica} -> `$`,
-        FUNNY_MONEY(x); // type narrowwing
+        FUNNY_MONEY(c); // type narrowwing
 
 CarPrice: (c: CAR) -> `$`/CAR_UNIT(c);
 
