@@ -4,9 +4,11 @@
 CAR_UNIT(CAR): unit;
 
 B52_TARGETS: set;
+ {murica}: set; // singleton;
+ 
 FUNNY_MONEY(B52_TARGETS): unit;
 `$`: unit;
-CURRENCY_UNIT: $ | disjoint{t: B52_TARGETS @ FUNNY_MONEY(t)}; //disjoint union/sum type
+CURRENCY_UNIT := {`$`} | disjoint{t: B52_TARGETS @ FUNNY_MONEY(t)}; //disjoint union/sum type
 COUNTRY: {murica} | B52_TARGETS; //disjoint union/sum type
 
 CURRENCY: c: COUNTRY -> CURRENCY_UNIT 
