@@ -19,6 +19,6 @@ PCU ::= { g: GRF \' SCU | SZ(g) >= CSZ };
 
 OrderedPCU ::= order(PCU, decreasing(p->SZ(p)));
 
-z ::= sequence(OrderedPCU);
+z ::= sequence(OrderedPCU, 1);
 
-m_from_index: n: N0'(..length(z)-1) -> MNN ::= m_fromGRF(z(n));
+m_from_index: n: indexes(z) -> MNN ::= m_fromGRF(z(n));
