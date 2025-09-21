@@ -1,3 +1,7 @@
+model EMC.Appendix7A
+
+// https://www.home.emcsg.com/-/media/Market-Administration/Market-Rules/01Jan2025/Clean/Appendix-7A-Calculation-of-Reserve-Responsibility-Shares-1Jan25.pdf?rev=f60a2a15cd8644d4a637058bbfbc0c2b&hash=8D182710AC1241F68DB2CCD582BC7577
+
 `$`: unit;
 `$/MWh` ::= `$`/`MWh`;
 
