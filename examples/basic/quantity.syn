@@ -5,14 +5,15 @@ CAR_UNIT(CAR): unit;
 
 B52_TARGETS: set;
  {murica}: set; // singleton;
- 
+ COUNTRY: {murica} | B52_TARGETS; //disjoint union/sum type
+
 FUNNY_MONEY(B52_TARGETS): unit;
 `$`: unit;
-CURRENCY_UNIT := {`$`} | disjoint{t: B52_TARGETS @ FUNNY_MONEY(t)}; //disjoint union/sum type
-COUNTRY: {murica} | B52_TARGETS; //disjoint union/sum type
+CURRENCY_UNIT := `$` | disjoint{t: B52_TARGETS @ FUNNY_MONEY(t) }; //disjoint union/sum type (units are types not values)
 
 CURRENCY: c: COUNTRY -> CURRENCY_UNIT 
     ::= c ?   // pattern match on sum type
+
         {murica} -> `$`,
         FUNNY_MONEY(c); // type narrowwing
 
