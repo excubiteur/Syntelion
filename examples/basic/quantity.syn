@@ -1,11 +1,22 @@
-`$`: unit;
-
 // Units can model external quantity types
 // Apples and oranges as different units 
 // are abstracted away by the model
 CAR_UNIT(CAR): unit;
 
+B52_TARGETS: set;
+FUNNY_MONEY(B52_TARGETS): unit;
+`$`: unit;
+CURRENCY_UNIT: $ | disjoint{t: B52_TARGETS @ FUNNY_MONEY(t)}; //disjoint union/sum type
+COUNTRY: {murica} | B52_TARGETS; //disjoint union/sum type
+
+CURRENCY: c: COUNTRY -> CURRENCY_UNIT 
+    ::= c ?   // pattern match on sum type
+        {murica} -> `$`,
+        FUNNY_MONEY(x); // type narrowwing
+
 CarPrice: (c: CAR) -> `$`/CAR_UNIT(c);
+
+InternationalCarPrice: (country: COUNTRY, car: CAR) -> CURRENCY(country)/CAR_UNIT(car);
 
 // Dimensions and arithmetic are checked 
 // No adding of apples to oranges
