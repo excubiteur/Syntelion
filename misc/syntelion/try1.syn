@@ -1,0 +1,62 @@
+
+/* This */
+MARKET_NETWORK_NODE: set; // Blah
+DISPATCH_NETWORK_NODE: set;
+
+// Editor navigation, collapsible
+section "Blah 1"
+{
+    //**
+
+    **/
+    local DNN alias DISPATCH_NETWORK_NODE;
+
+    local Blah: (x: DNN) -> B = OtherBlah(x); 
+
+section "Subblah 1"   // "Blah 1"."Subblah 1" to editor
+{
+
+} // 
+
+
+}
+
+example Blah1
+{
+
+}
+
+// Editor can hide
+example Blah2
+{
+    include Blah1;
+    
+    B = { a, b, c};
+
+    { x:X @ <x, Func(x), Map(x)> } = {
+        <a, b, c>,
+        ...
+    };
+
+}
+
+    // Editor can hide
+    ill-formed-begin "...";
+
+        // fails if compiler succeeds
+
+    ill-formed-end;
+
+
+Meter: 
+
+
+
+data;
+
+B = { a, b, c};
+
+{ x:X @ <x, Func(x), Map(x)> } = {
+    <a, b, c>,
+    ...
+};
