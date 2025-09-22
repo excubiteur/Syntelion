@@ -1,6 +1,6 @@
 set PARTIONED_SET{A | B | C}; // set defined as partion, can be disambiguated PARTIONED_SET.A
 
-D | E ::= PARTIONED_SET) // partition defined on a set, can be disambiguated PARTIONED_SET.D
+D | E ::= PARTIONED_SET; // partition defined on a set, can be disambiguated PARTIONED_SET.D
 
  set YET_ANOTHER_SET{F | G | H}; 
 
