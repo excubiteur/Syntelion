@@ -1,7 +1,13 @@
 model standard.calendar
 
-DATE
+set DATE;
 
-local..indexed with zone
+set TIME_ZONE;
 
-global..
+LOCAL_DATE ::= (DATE, TIME_ZONE); 
+
+set GLOBAL_DATE;
+
+set MONTH;
+
+set YEAR;
