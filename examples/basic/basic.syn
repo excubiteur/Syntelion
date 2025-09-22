@@ -11,13 +11,13 @@ even this **// because they must start the line
 set SOME_SET; // Anything here (single line comment)
 
 //**
-In commnents everything in code() must be well formed    
+In comments everything in code() must be well formed    
 You can talk about code(SOME_SET) without typos;
 **//
 
-/*You can make sure you talk about correct code(set NEW_SET;) */ 
+/* You can make sure you talk about correct code(set NEW_SET;) */ 
 
-//But no comments inside code()
+// But no comments inside code()
 
 //**
 code(set BASIC_SET;)         declares a finite type
