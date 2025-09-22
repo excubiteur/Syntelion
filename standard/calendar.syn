@@ -1,11 +1,7 @@
 model standard.calendar
 
-include model standard.clock
+DATE
 
-WEEK: time(7);
-day_of_week: indexes(WEEK) -> DAY;
+local..indexed with zone
 
-concept month(days: N1)
-{
-    days: 
-}
+global..

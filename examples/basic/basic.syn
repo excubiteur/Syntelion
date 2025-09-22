@@ -1,6 +1,15 @@
 module BasicSyntaxExample
 
 SOME_SET: set;
+// code(set) is a type constructor 
+// code(SOME_SET) is a type
+// Other type constructors are 
+// code(unit) and code(ordered)
+// for example
+
+SomeElement: SOME_SET;
+// code(SomeElement) is a variable 
+// of type code(SOME_SET)
 
 // example names and ill formed section names each have their
 // own namespace and can be anonymous
