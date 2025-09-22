@@ -1,13 +1,17 @@
 model standard.calendar
 
-set DATE;
-
-set TIME_ZONE;
-
+ordered DATE;
 LOCAL_DATE ::= (DATE, TIME_ZONE); 
+GLOBAL_DATE ::= (DATE, {Utc});
 
-set GLOBAL_DATE;
+ordered MONTH;
+ordered YEAR;
+ordered DAY_OF_WEEK;
+ordered DAY_OF_MONTH(YEAR, MONTH);
 
-set MONTH;
-
-set YEAR;
+Month:              DATE -> MONTH;
+Year:               DATE -> YEAR;
+DayOfWeek:          DATE -> DAY_OF_WEEK;
+MonthAndDay:     d: DATE -> (MONTH, DAY_OF_MONTH(Year(d), m));
+YearAndMonth        DATE -> (YEAR, MONTH, N1);
+YearMonthAndDay:    DATE -> (y:YEAR, m:MONTH, DAY_OF_MONTH(y, m));

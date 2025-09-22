@@ -1,15 +1,15 @@
 model standard.clock
 
-// indexes
-HOUR
-MINUTE // includes hour
-SECOND // inludes minute
+ordered CLOCK_HOUR;   // bijects 0..23
+ordered CLOCK_MINUTE; // bijects 0..59
+ordered CLOCK_SECOND; // bijects 0..59
 
-// clock.hour for clarity 0 to 23
-// start(clock.hour). 0 to 23
-// end(clock.hour). 1 to 24
+CLOCK_TIME         ::= (CLOCK_HOUR, CLOCK_MINUTE, CLOCK_SECOND);
+CLOCK_HOUR_MINUTE  ::= (CLOCK_HOUR, CLOCK_MINUTE);
 
-local...
-global...
+LOCAL_TIME  ::= ();
+GLOBAL_TIME ::
 
-zone
+LOCAL_HOUR_MINUTE
+
+LOCAL_HOUR
