@@ -2,6 +2,8 @@
 
 // hand wave
 
+constructor primitive, binary, group, field, set, ordered, unit;
+
 primitive 0, 1;
 binary '+', '-', '*', '/';
 
