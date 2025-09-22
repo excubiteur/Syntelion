@@ -1,9 +1,11 @@
-PARTIONED_SET ::= A | B | C; // set defined as partion, can be disambiguated PARTIONED_SET.A
+set PARTIONED_SET{A | B | C}; // set defined as partion, can be disambiguated PARTIONED_SET.A
 
-D | E ::= PARTIONED_SET; // partition defined on a set, can be disambiguated PARTIONED_SET.D
+D | E ::= PARTIONED_SET) // partition defined on a set, can be disambiguated PARTIONED_SET.D
 
-F | G | H ::= YET_ANOTHER_SET; 
-S: set;
+ set YET_ANOTHER_SET{F | G | H}; 
+
+set S;
+
 P1 | P2 | P3 | P4 | P5 ::= S;
 Q1 | Q2 | Q3 | Q4 | Q5 ::= S;
 
