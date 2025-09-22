@@ -1,5 +1,10 @@
 // יְהִי אוֹר γενηθήτω φῶς Fiat lux
 
+// hand wave
+
+primitive 0, 1;
+binary '+', '-', '*', '/';
+
 group('+', '-', 0) Z';
 
 N0' ::= Z'(0..);
