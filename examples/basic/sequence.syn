@@ -1,6 +1,9 @@
 [,] // sequence/bijection 
 length([])
-slice: N1, ...
+slices: N1, ...
+cycles
+
+choose(A) -> // axiom of choice for full sorting
 
 s as <a, b, c>
 
