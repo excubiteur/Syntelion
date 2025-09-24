@@ -2,18 +2,13 @@
 
 // hand wave
 
-constructor primitive, binary, group, field, set, ordered, unit;
-
-primitive 0, 1;
-binary '+', '-', '*', '/';
-
-group('+', '-', 0) Z';
-
+primitive Z', Q', R';
 N0' ::= Z'(0..);
 N1' ::= Z'(1..);
 
-field('+', '-', 0, '*', '/', 1) R';
+constructor set, ordered, quantity, discrete, continuous;
 
-discrete machineint(0..), bignum;
+// examples
+discrete machineint(0..), bignum; 
 continuous decimal, machinedouble;
 
