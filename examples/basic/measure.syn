@@ -1,14 +1,15 @@
-// Units can model external quantity types
+// Quantities can model external quantity types
 // Apples and oranges as different units 
 // are abstracted away by the model
-CAR_UNIT(CAR): unit;
+CAR: set;
+CAR_UNIT(CAR): quantity;
 
 B52_TARGETS: set;
 {murica}; // singleton;
 COUNTRY: {murica} | B52_TARGETS; //disjoint union/sum type
 
-FUNNY_MONEY(B52_TARGETS): unit;
-`$`: unit;
+FUNNY_MONEY(B52_TARGETS): quantity;
+`$`: quantity;
 CURRENCY_UNIT := `$` | disjoint{t: B52_TARGETS @ FUNNY_MONEY(t) }; //disjoint union/sum type (units are types not values)
 
 CURRENCY: c: COUNTRY -> CURRENCY_UNIT 
