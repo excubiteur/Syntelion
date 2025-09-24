@@ -1,0 +1,19 @@
+From Excel intuition to type-theoretic correctness: domain logic made clear, correct, and composable.
+
+Imagine a language where domain experts can model their rules as easily as they do in Excel — using sets, 
+tables, and formulas — but every rule is provably correct and type-safe. That’s our DSL: intuitive 
+set-theoretic syntax on the surface, powered by type-theoretic rigor underneath.
+No Rete networks, no Java boilerplate, no opaque aggregates — just clarity, 
+correctness, and composability. It’s the SQL of domain logic: expressive, verifiable, 
+and immediately usable by humans and machines alike.
+
+Most business rules and domain models today are trapped in verbose, 
+brittle general-purpose code — think Java with Lombok acrobatics 
+or Rete-based BRMS. Meanwhile, domain experts with no programming background 
+can model complex realities in Excel using nothing more than sets, tables, and formulas. 
+Our DSL bridges that gap: it presents domain logic as intuitive set-theoretic and 
+predicate constructs, but under the hood, it’s fully type-theoretic and provably sound.
+The result? Domain experts can write, read, and reason about rules naturally, 
+while developers get a robust, composable, and verifiable system. 
+No aggregates, no mutable caches, no opaque engines — just clarity, correctness, 
+and expressive power, all embedded seamlessly in the host language of your choice.
