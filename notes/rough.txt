@@ -43,3 +43,5 @@ You measure accumulated calories wrongly.
 As microservice
 
 https://github.com/ddd-by-examples/factory
+
+query is backward chaining

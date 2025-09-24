@@ -9,7 +9,7 @@ DEMAND: (DEMAND_SCHEMA, level: N0') | NONE;
 
 ProductDemand : PRODUCT, day -> DAILY_DEMAND;
 
-query ProcessDocument
+operation ProcessDocument
 
 include model DemandForecasting
 

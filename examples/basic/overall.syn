@@ -2,7 +2,7 @@ module A.B includes A
 
 include A implies A.*
 
-model query problem    BlahVar: boolvar   KKVar: intval.   NNVat:floatvar.      BlahVar <-> AbSet & CcSet;        problem ....
+model query operation problem    BlahVar: boolvar   KKVar: intval.   NNVat:floatvar.      BlahVar <-> AbSet & CcSet;        problem ....
 
 implementation   lookup(lazy, eager) procedure(MEMOIZED:bool).  id_type.   sql, host_method EAGER, LAZY, LAZY_AND_MEMOIZED, model(projection_params)
 
@@ -11,7 +11,7 @@ model Blah
 include ParentBlah
 data OptionalName
 include Blah
-query BillPerMonth
+operation BillPerMonth
 bindings
 x: Month
 results
@@ -24,9 +24,9 @@ model A;
 include Alpha;
 endmodel; // optional
 
-query B;
+operation B;
 include A;
-endquery; // optional
+endoperation; // optional
 
 problem C;
 include B;
@@ -68,13 +68,13 @@ model;
 
 data; // tests, examples
 
-query; // transaction script
+operation; // transaction script
 
 problem; // model for external optimizer, algorithm
 
 model BlahA
 
-query Abc
+operation Abc
 
 include BlahA
 
@@ -84,7 +84,7 @@ parameters/params
 
 
 
-query TransactionScriptA
+operation  TransactionScriptA
 
 
 
