@@ -1,4 +1,4 @@
-model standard.discrete
+model standard.grid1d
 
 concept grid1d(size: N1')
 {

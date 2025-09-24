@@ -13,3 +13,7 @@ N0' ::= Z'(0..);
 N1' ::= Z'(1..);
 
 field('+', '-', 0, '*', '/', 1) R';
+
+discrete machineint(0..), bignum;
+continuous decimal, machinedouble;
+

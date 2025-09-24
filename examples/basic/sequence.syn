@@ -3,7 +3,7 @@ length([])
 slices: N1, ...
 cycles
 
-choose(A) -> // axiom of choice for full sorting
+B: order(A) ::= flatten equivalence classes
 
 s as <a, b, c>
 

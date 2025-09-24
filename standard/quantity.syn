@@ -1,0 +1,21 @@
+model standard.quantity
+
+k ::= 1000;
+M ::= 1000*k;
+
+quantity `s`, `m`, `kg`; // quantity and base measure
+
+`h`   ::= 60*60*`s`; // measure
+
+`W`   ::= `kg`* ( (`m`^2) / (`s`^3) ); // quantity and base measure
+`MW`  ::= M*`W`; // measure
+
+`MWh` ::= `MW`*`h`; // measure
+
+| Word      | Technical meaning                           | Example             | Programmer analogy |     |            |
+| --------- | ------------------------------------------- | ------------------- | ------------------ | --- | ---------- |
+| Quantity  | Abstract physical property (type-like)      | Length, Time, Mass  | Type               |     |            |
+| Measure   | Act/result of assigning a value (num × ref) | “5 metres”, “2.1 s” | Value instance     |     |            |
+| Magnitude | Size/amount, stripped of direction/unit     | 5 (from 5 m),       | v                  | =10 | Raw scalar |
+
+
