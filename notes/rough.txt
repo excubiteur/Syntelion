@@ -45,3 +45,8 @@ As microservice
 https://github.com/ddd-by-examples/factory
 
 query is backward chaining
+
+free: python, haskell/agda(for formal verification)
+commercial: Java, C#, Rust
+Under study: SAP
+R&D: interface to ontologies and LLMs
