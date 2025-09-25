@@ -1,0 +1,14 @@
+model standard.predefined
+
+// From haskell
+concept eq;
+concept bounded;
+concept enum;
+concept ord;
+concept num;
+concept fractional;
+concept integral;
+concept floating;
+
+// ??
+concept finite;

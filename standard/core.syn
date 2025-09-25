@@ -1,14 +1,9 @@
 // יְהִי אוֹר γενηθήτω φῶς Fiat lux
 
-// hand wave
 
-primitive Z', Q', R';
-N0' ::= Z'(0..);
-N1' ::= Z'(1..);
+concept set extends eq, finite;
+concept ordered extends set, ord;
 
-constructor set, ordered, quantity, discrete, continuous;
-
-// examples
-discrete machineint(0..), bignum; 
-continuous decimal, machinedouble;
+fractional R';
+integral Z';
 
