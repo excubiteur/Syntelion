@@ -2,8 +2,8 @@
 
 
 concept set extends eq, finite;
-concept ordered extends set, ord;
+concept ordered extends set, enum; // ord not enough because of '=';
 
-fractional R';
-integral Z';
+fractional R', Q';
+??? Z';
 
