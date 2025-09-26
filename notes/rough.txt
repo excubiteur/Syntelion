@@ -50,3 +50,12 @@ free: python, haskell/agda(for formal verification)
 commercial: Java, C#, Rust, WASM
 Under study: SAP
 R&D: interface to ontologies and LLMs
+
+https://hal.science/hal-03170814v1/document
+https://www.cs.ox.ac.uk/peter.wong/pub/bpmnsem.pdf
+https://www.researchgate.net/publication/27467826_Formal_Semantics_and_Automated_Analysis_of_BPMN_Process_Models
+https://ieeexplore.ieee.org/document/4739729
+https://www.cs.ox.ac.uk/jeremy.gibbons/publications/bpmn-csp.pdf
+https://davidchristiansen.dk/pubs/wsfm2010.pdf
+https://pure.tue.nl/ws/portalfiles/portal/108782082/10.1.1.94.6945.pdf
+https://www.inderscienceonline.com/doi/abs/10.1504/IJBPIM.2019.100922
