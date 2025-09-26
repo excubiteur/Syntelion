@@ -1,2 +1,4 @@
+model standard.timekeeping
+
 set TIME_ZONE;
-{Utc};
+single UTC;

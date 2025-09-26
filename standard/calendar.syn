@@ -1,8 +1,8 @@
 model standard.calendar
 
 ordered DATE;
-LOCAL_DATE ::= (DATE, TIME_ZONE); 
-GLOBAL_DATE ::= (DATE, {Utc});
+LOCAL_DATE ::= (DATE, TIME_ZONE | UTC); 
+GLOBAL_DATE ::= (DATE, UTC);
 
 ordered MONTH;
 ordered YEAR;
