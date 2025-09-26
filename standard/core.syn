@@ -1,6 +1,7 @@
 // יְהִי אוֹר γενηθήτω φῶς Fiat lux
 
 concept single;
+concept countable extends eq, enum;
 concept set extends eq, finite;
 concept ordered extends set, enum; // ord not enough because of '=';
 

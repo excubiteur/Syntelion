@@ -1,11 +1,11 @@
 model standard.calendar
 
-ordered DATE;
+countable DATE;
 LOCAL_DATE ::= (DATE, TIME_ZONE | UTC); 
 GLOBAL_DATE ::= (DATE, UTC);
 
 ordered MONTH;
-ordered YEAR;
+countable YEAR;
 ordered DAY_OF_WEEK;
 ordered DAY_OF_MONTH(YEAR, MONTH);
 
