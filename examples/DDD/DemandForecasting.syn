@@ -1,62 +1,59 @@
 model DemandForecasting
 
-// https://github.com/ddd-by-examples/factory/tree/master/demand-forecasting-model/src/main/java/io/dddbyexamples/factory/demand/forecasting
-
+///////////////
+// Entities
 PRODUCT: set;
 
-DEMAND_SCHEMA ::= AtDayStart | Till12 | TillDayEnd | Twice;
-DEMAND: (DEMAND_SCHEMA, level: N0') | NONE;
+///////////////
+// Types: Values
+DEMAND_SCHEMA        ::= AtDayStart | Till12 | TillDayEnd | Twice;
 
-ProductDemand : PRODUCT, day -> DAILY_DEMAND;
+DEMAND               ::= (DEMAND_SCHEMA, level: N0');
 
-operation ProcessDocument
+ADJUSTMENT           ::= (DEMAND, strong:BOOLEAN);
+
+DEMAND_VALUE         ::= (documented: DEMAND, adjustment: ADJUSTMENT);
+
+
+///////////////
+// Types: Maps/Dictionaries 
+PRODUCT_DEMAND       ::= DATE +> DEMAND_VALUE;
+
+ADJUSTMENTS_BY_DAY   ::= DATE +> ADJUSTMENT;
+
+ADJUST_DEMAND        ::= (PRODUCT, ADJUSTMENTS_BY_DAY);  // AdjustDemand
+
+
+///////////////
+// Repository
+ProductDemand: (PRODUCT, DATE) +> DEMAND_VALUE;
+
+
+///////////////
+// Query
+ProductDemandStartingFrom ::= (product: PRODUCT, start: DATE) -> PRODUCT_DEMAND is 
+    { (p, d): domain(ProductDemand) | p = product and start <= d @ (d, ProductDemand(p, d)) }; 
+
+
+
+///////////////
+///////////////
+///////////////
+// Transaction Script
+operation Adjust
 
 include model DemandForecasting
 
 parameters
+(
+    Product: PRODUCT;    
+    Start: DATE;
+)
 
-Product: PRODUCT;
-StartDate: DATE;
-
-results
-
-DailyDemand: DAILY_DEMAND;
-
-
-
-
+output
+(
+    Changes: DATE +> DEMAND_CHANGE; 
+)
 
 
 
-
-package io.dddbyexamples.factory.demand.forecasting;
-
-import lombok.AllArgsConstructor;
-
-@AllArgsConstructor
-public class DemandService {
-
-    private final ProductDemandRepository repository;
-
-    public void initNewProduct(String refNo) {
-        repository.initNewProduct(refNo);
-    }
-
-    public void process(Document document) {
-        ProductDemand model = repository.get(document.getRefNo());
-        model.process(document);
-        repository.save(model);
-    }
-
-    public void adjust(AdjustDemand adjustDemand) {
-        ProductDemand model = repository.get(adjustDemand.getRefNo());
-        model.adjust(adjustDemand);
-        repository.save(model);
-    }
-
-    public void review(ApplyReviewDecision reviewDecision) {
-        ProductDemand model = repository.get(reviewDecision.getRefNo());
-        model.review(reviewDecision);
-        repository.save(model);
-    }
-}
